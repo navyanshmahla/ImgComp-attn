@@ -4,7 +4,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 from attention.channel import *
 from attention.spatial import *
-
+#from torchsummary import summary
+#from torchviz import make_dot
 
 # Define the residual block
 class ResidualBlock(nn.Module):
@@ -55,5 +56,11 @@ class ResNet(nn.Module):
 
 model = ResNet(num_blocks=30)
 
-print(model)
+#print(model)
+
+# Generate a computation graph and save it as a PDF
+#x = torch.zeros((1, 3, 32, 32))  # Example input
+#dot = make_dot(model(x), params=dict(model.named_parameters()))
+#dot.format = 'pdf'
+#dot.render("resnet_graph")
 
