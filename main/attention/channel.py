@@ -2,8 +2,8 @@ import torch
 import math
 import torch.nn as nn
 import torch.nn.functional as F
-from pool import *
 from util import *
+
 
 class ChannelGate(nn.Module):
     def __init__(self, gate_channels, reduction_ratio=16, pool_types=['avg', 'max']):
